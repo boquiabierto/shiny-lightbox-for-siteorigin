@@ -10,6 +10,7 @@
  * Plugin Name:       Shiny Lightbox for Siteorigin
  * Plugin URI:        http://plugins.grell.es
  * GitHub Plugin URI: boquiabierto/shiny-lightbox-for-siteorigin
+ * GitHub Plugin URI: https://github.com/boquiabierto/shiny-lightbox-for-siteorigin
  * Description:       Open linked images in a lightbox.
  * Version:           1.0
  * Author:            Adrián Ortiz Arandes
