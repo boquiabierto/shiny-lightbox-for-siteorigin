@@ -12,7 +12,7 @@
  * GitHub Plugin URI: boquiabierto/shiny-lightbox-for-siteorigin
  * GitHub Plugin URI: https://github.com/boquiabierto/shiny-lightbox-for-siteorigin
  * Description:       Open linked images in a lightbox.
- * Version:           1.0
+ * Version:           1.1
  * Author:            Adrián Ortiz Arandes
  * Author URI:        http://grell.es
  * License:           GPL-3.0+
@@ -24,24 +24,27 @@
 
 class ShinyLightboxForSiteorigin {
 	
+	private $plugin_data;
+	
+	private $text_domain;
+	
 	function __construct() {
 		
 		add_action( 'init', array( $this, 'init' ) );
 		add_action( 'init', array( $this, 'load_textdomain' ) );
+		
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+		add_filter( 'siteorigin_panels_widget_style_fields', array( $this, 'style_fields' ) );
+		add_filter( 'siteorigin_panels_widget_style_attributes', array( $this, 'style_attributes' ), 10, 2);
 
 	}
 	
 	public function init() {
 		
-		$this->plugin_data = get_plugin_data( dirname( __FILE__ ) . '/so-shiny-lightbox.php');
+		$this->plugin_data = get_plugin_data( __FILE__ );
 		$this->text_domain = $this->plugin_data['TextDomain'];
-
 		$this->lightbox_class = 'lightbox';
 		$this->assets_path = plugin_dir_url( __FILE__ ) .'assets/';
-		
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-		add_filter( 'siteorigin_panels_widget_style_fields', array( $this, 'style_fields' ) );
-		add_filter( 'siteorigin_panels_widget_style_attributes', array( $this, 'style_attributes' ), 10, 2);
 
 	}
 	
