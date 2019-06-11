@@ -1,11 +1,10 @@
 (function($){
-	
-	$( '.lightbox .gallery a, .lightbox .sow-masonry-grid a' ).shinybox();
-	
-	$( '.lightbox img').each(function( index ){
-		if ( $(this).parent().is('a') ) {
-			$(this).parent().shinybox();
-		}
+
+	$(function() {
+		var widgets = [ 'gallery', 'sow-masonry-grid', 'so-widget-sow-image-grid'];
+		$.each( widgets, function( index, value ){
+			$( '.lightbox .' + value + ' a' ).shinybox();
+		});
 	});
 	
 })(jQuery);

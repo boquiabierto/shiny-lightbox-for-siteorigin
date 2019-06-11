@@ -12,7 +12,7 @@
  * GitHub Plugin URI: boquiabierto/shiny-lightbox-for-siteorigin
  * GitHub Plugin URI: https://github.com/boquiabierto/shiny-lightbox-for-siteorigin
  * Description:       Open linked images in a lightbox.
- * Version:           1.1
+ * Version:           1.2
  * Author:            Adrián Ortiz Arandes
  * Author URI:        http://grell.es
  * License:           GPL-3.0+
